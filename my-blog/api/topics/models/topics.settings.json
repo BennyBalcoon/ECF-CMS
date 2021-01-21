@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topics",
+  "info": {
+    "name": "Topics",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "top_title": {
+      "type": "string",
+      "required": true
+    },
+    "top_usrId": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "topic"
+    },
+    "messages": {
+      "collection": "messages",
+      "via": "msg_top_id"
+    }
+  }
+}

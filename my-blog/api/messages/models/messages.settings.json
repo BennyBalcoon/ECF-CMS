@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "name": "Messages",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "msg_content": {
+      "type": "text",
+      "required": true
+    },
+    "msg_usr_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "message"
+    },
+    "msg_top_id": {
+      "via": "messages",
+      "model": "topics"
+    }
+  }
+}
